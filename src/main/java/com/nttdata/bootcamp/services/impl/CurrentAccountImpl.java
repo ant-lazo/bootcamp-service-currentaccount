@@ -35,5 +35,15 @@ public class CurrentAccountImpl implements ICurrentAccountService {
 	public Mono<Void> delete(CurrentAccount currentAccount) {
 		return carepo.delete(currentAccount);
 	}
+
+	@Override
+	public Flux<CurrentAccount> findByIdCustomer(String idCustomer) {
+		return carepo.findByIdCustomer(idCustomer);
+	}
+
+	@Override
+	public Mono<CurrentAccount> findByIdCustomerAndTypeCustomer(String idCustomerPerson,String typeCustomer) {
+		return carepo.findByIdCustomerAndTypeCustomer(idCustomerPerson,typeCustomer);
+	}
 	
 }

@@ -59,4 +59,16 @@ public class CurrentAccountController {
 		return carepo.delete(currentAccount);
 	}
 	
+	@GetMapping("/findByIdCustomer/{idCustomer}")
+	public Flux<CurrentAccount> findByIdCustomer(@PathVariable String idCustomer){
+		log.info("all CurrentAccounts by id customer  were consulted");
+		return carepo.findByIdCustomer(idCustomer);
+	}
+	
+	@GetMapping("/findByIdCustomerAndTypeCustomer/{idCustomer}/{typeCustomer}")
+	public Mono<CurrentAccount> findByIdCustomerAndTypeCustomer(@PathVariable String idCustomer, @PathVariable String typeCustomer){
+		log.info("all CurrentAccounts by id customer  were consulted");
+		return carepo.findByIdCustomerAndTypeCustomer(idCustomer,typeCustomer);
+	}
+	
 }
