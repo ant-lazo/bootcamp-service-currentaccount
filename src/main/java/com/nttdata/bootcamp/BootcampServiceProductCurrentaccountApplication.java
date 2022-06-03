@@ -38,6 +38,7 @@ public class BootcampServiceProductCurrentaccountApplication implements CommandL
 				.typeCustomer("customerPerson")
 				.accountingBalance("100")
 				.maintenance("2")
+				.profile("none")
 				.build()).flatMap(bs->{
 						return carepo.save(bs);
 				}).subscribe(s-> log.info("Se ingreso currentAccount: "+s));
